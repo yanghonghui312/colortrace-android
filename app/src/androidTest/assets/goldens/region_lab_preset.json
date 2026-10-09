@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "kind": "region",
+  "strength": 1.0,
+  "params": {
+    "global": {
+      "version": 1,
+      "kind": "lab_stats",
+      "strength": 1.0,
+      "params": {
+        "ref_mean": [
+          36.429359,
+          4.820341,
+          9.152804
+        ],
+        "ref_std": [
+          22.776501,
+          9.425714,
+          28.351925
+        ]
+      }
+    },
+    "regions": {
+      "skin": {
+        "version": 1,
+        "kind": "lab_stats",
+        "strength": 1.0,
+        "params": {
+          "ref_mean": [
+            51.107662,
+            16.710484,
+            22.791292
+          ],
+          "ref_std": [
+            17.524059,
+            4.962062,
+            5.34995
+          ]
+        }
+      },
+      "hair": {
+        "version": 1,
+        "kind": "lab_stats",
+        "strength": 1.0,
+        "params": {
+          "ref_mean": [
+            15.490313,
+            4.718736,
+            6.079465
+          ],
+          "ref_std": [
+            12.036866,
+            2.810719,
+            6.356507
+          ]
+        }
+      },
+      "cloth": {
+        "version": 1,
+        "kind": "lab_stats",
+        "strength": 1.0,
+        "params": {
+          "ref_mean": [
+            41.984211,
+            5.850224,
+            27.817986
+          ],
+          "ref_std": [
+            26.049417,
+            10.302111,
+            32.136532
+          ]
+        }
+      },
+      "bg": {
+        "version": 1,
+        "kind": "lab_stats",
+        "strength": 1.0,
+        "params": {
+          "ref_mean": [
+            36.955921,
+            -3.961483,
+            -22.254164
+          ],
+          "ref_std": [
+            14.265833,
+            2.276535,
+            5.008949
+          ]
+        }
+      }
+    },
+    "ratios": {
+      "skin": 0.16463,
+      "hair": 0.21659,
+      "cloth": 0.35657,
+      "bg": 0.26221
+    },
+    "luma": "global",
+    "protect": 1.0
+  }
+}

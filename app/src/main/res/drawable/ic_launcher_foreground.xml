@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  自适应图标 · 前景层（编辑页画布：左右对比 + 分割线 + 拖柄）。
+  与 android/icon/colortrace-icon.svg 的 #fg_layer 逐字对应。
+
+  尺寸纪律（v2，2026-10-01 真机复核后收紧）：
+  · 方片 48dp 居中（30..78）+ 圆角 11 —— 对角最远点 (24−11)·√2+11 = 29.4 < 33
+    （66dp 安全圆半径）✓
+  · 初版画了 52dp + 1.6dp 深色描边的拖柄，真机上看出两个毛病：**方片四角顶到
+    遮罩**（启动器只显示内层 72dp，52dp 实际占可见宽度 ~72%）、**拖柄像镜头**
+    （亮圆 + 深描边在二分色交界处太抢）⇒ 方片收到 48、拖柄去描边、分割线 2.4→2.2。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 左半：原片（冷、低饱和） -->
+    <path android:pathData="M52.9,30 L41,30 A11,11 0 0 0 30,41 L30,67 A11,11 0 0 0 41,78 L52.9,78 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="30" android:startY="30"
+                android:endX="52.9" android:endY="78">
+                <item android:offset="0" android:color="#FFA9BECB" />
+                <item android:offset="1" android:color="#FF5C7A8C" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- 右半：追色后（品牌琥珀） -->
+    <path android:pathData="M55.1,30 L67,30 A11,11 0 0 1 78,41 L78,67 A11,11 0 0 1 67,78 L55.1,78 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="55.1" android:startY="30"
+                android:endX="78" android:endY="78">
+                <item android:offset="0" android:color="#FFF4C377" />
+                <item android:offset="1" android:color="#FFD08F35" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- 分割线 -->
+    <path
+        android:pathData="M54,35.5 L54,72.5"
+        android:strokeColor="#FFF7F2E8"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round" />
+
+    <!-- 拖柄：纯亮圆、不描边（深描边会把它变成"镜头"，二分色交界处本就够对比） -->
+    <path
+        android:pathData="M54,54 m-5.2,0 a5.2,5.2 0 1,0 10.4,0 a5.2,5.2 0 1,0 -10.4,0"
+        android:fillColor="#FFF7F2E8" />
+</vector>

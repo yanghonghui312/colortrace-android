@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  自适应图标 · 单色层（带主题图标，API 33+）。
+  系统只取本层的 **alpha 并染色**，所以：只能单色（这里用白）、不能靠颜色区分，
+  描边与拖柄在同色下会糊成一块 —— 简化成"两块面板 + 中缝"才是这个尺寸下读得出来的形态。
+  与 android/icon/colortrace-icon.svg 的 #mono_layer 逐字对应。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:pathData="M52.4,30 L41,30 A11,11 0 0 0 30,41 L30,67 A11,11 0 0 0 41,78 L52.4,78 Z"
+        android:fillColor="#FFFFFFFF" />
+    <path
+        android:pathData="M55.6,30 L67,30 A11,11 0 0 1 78,41 L78,67 A11,11 0 0 1 67,78 L55.6,78 Z"
+        android:fillColor="#FFFFFFFF" />
+</vector>

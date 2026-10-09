@@ -1,0 +1,29 @@
+{
+ "w": 256,
+ "h": 256,
+ "cases": {
+  "soft": {
+   "grain_on": 0,
+   "soft_on": 1.0,
+   "soft_strength": 30.0,
+   "soft_range": 60.0,
+   "soft_radius": 50.0
+  },
+  "bloom": {
+   "grain_on": 0,
+   "bloom_on": 1.0,
+   "bloom_strength": 40.0,
+   "bloom_tint": 40.0
+  },
+  "soft_bloom": {
+   "grain_on": 0,
+   "soft_on": 1.0,
+   "soft_strength": 30.0,
+   "soft_range": 60.0,
+   "soft_radius": 50.0,
+   "bloom_on": 1.0,
+   "bloom_strength": 40.0,
+   "bloom_tint": 40.0
+  }
+ }
+}

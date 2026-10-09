@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  colortrace 应用图标 · 设计源文件（108×108 viewBox，与 Android 自适应图标同坐标）
+
+  ⚠️ 本文件是**设计源**，不参与打包（Android 不吃 SVG）。真正装进 APK 的是
+  app/src/main/res/drawable/ic_launcher_{background,foreground,monochrome}.xml
+  （VectorDrawable，路径数据与本文件逐字对应）。改图标 = 改这两处并保持一致。
+
+  设计（2026-10-01）：图标 = App 主界面本身
+    · 深色画布底（bg_layer）—— 调色工作区纪律：中性深底不干扰色彩判断
+    · 前后对比分割线 + 亮色拖柄（fg_layer）—— 编辑页画布的核心交互
+    · 左冷（原片）/ 右暖（追色后）—— "把参考图的光影色调迁移到自己的照片上"
+
+  ⚠️ 尺寸别按"108 里有 52"来想（v1 就是这么翻车的）：启动器**只显示内层 72dp**
+  （外层每边 18dp 是遮罩/视差区），所以 108 空间里的 52dp 在屏幕上占可见宽度 ~72%，
+  四角会顶到遮罩。正解是**按可见区 72dp 定尺寸**：
+    · 关键图形收在**居中 66dp 圆**（半径 33）内 —— 圆形遮罩最狠；
+    · 方片取 48dp + 圆角 11：对角最远点 (24−11)·√2+11 = 29.4 < 33 ✓，
+      在可见区里占 48/72 = 67%（≈ Material 的 66dp 方键线比例）。
+  v1 → v2 的修正：方片 52→48、拖柄 12dp+1.6dp 深描边 → 10.4dp 无描边
+  （深描边在二分色交界处太抢，真机上像个"镜头"）。
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 108 108">
+
+  <defs>
+    <!-- 画布底：中性深灰，纵向微渐变 -->
+    <linearGradient id="canvasBg" x1="0" y1="0" x2="0" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#262A30"/>
+      <stop offset="1" stop-color="#121316"/>
+    </linearGradient>
+    <!-- 琥珀辉光：呼应 App 欢迎页 hero 卡片（唯一"装饰"出场） -->
+    <radialGradient id="amberGlow" cx="54" cy="56" r="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0"    stop-color="#E8A854" stop-opacity="0.22"/>
+      <stop offset="0.55" stop-color="#E8A854" stop-opacity="0.08"/>
+      <stop offset="1"    stop-color="#E8A854" stop-opacity="0"/>
+    </radialGradient>
+    <!-- 左半：原片（冷、低饱和） -->
+    <linearGradient id="coolPane" x1="30" y1="30" x2="52.9" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A9BECB"/>
+      <stop offset="1" stop-color="#5C7A8C"/>
+    </linearGradient>
+    <!-- 右半：追色后（品牌琥珀） -->
+    <linearGradient id="warmPane" x1="55.1" y1="30" x2="78" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F4C377"/>
+      <stop offset="1" stop-color="#D08F35"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ① 背景层 background（自适应图标会整体裁切，必须满幅 108×108，不能留透明） -->
+  <g id="bg_layer">
+    <rect x="0" y="0" width="108" height="108" fill="url(#canvasBg)"/>
+    <rect x="0" y="0" width="108" height="108" fill="url(#amberGlow)"/>
+  </g>
+
+  <!-- ② 前景层 foreground（关键图形全部落在 66dp 安全圆内） -->
+  <g id="fg_layer">
+    <path d="M52.9,30 L41,30 A11,11 0 0 0 30,41 L30,67 A11,11 0 0 0 41,78 L52.9,78 Z"
+          fill="url(#coolPane)"/>
+    <path d="M55.1,30 L67,30 A11,11 0 0 1 78,41 L78,67 A11,11 0 0 1 67,78 L55.1,78 Z"
+          fill="url(#warmPane)"/>
+    <path d="M54,35.5 L54,72.5" stroke="#F7F2E8" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <circle cx="54" cy="54" r="5.2" fill="#F7F2E8"/>
+  </g>
+
+  <!-- ③ 单色层 monochrome（API 33+ 带主题图标；系统只取 alpha 并染色）
+       简化成"两块面板 + 中缝"：同一色下描边/拖柄都会糊掉，中缝才读得出来 -->
+  <g id="mono_layer" fill="#FFFFFF">
+    <path d="M52.4,30 L41,30 A11,11 0 0 0 30,41 L30,67 A11,11 0 0 0 41,78 L52.4,78 Z"/>
+    <path d="M55.6,30 L67,30 A11,11 0 0 1 78,41 L78,67 A11,11 0 0 1 67,78 L55.6,78 Z"/>
+  </g>
+
+  <!-- ④ 预览：把"启动器实际只显示内层 72dp"画出来（不参与打包）
+       外框 = 108 全幅（遮罩/视差区），内框 = 可见区 72，虚线圈 = 66 安全圆 -->
+  <g id="preview_visible_72" transform="translate(120,0)">
+    <rect x="0" y="0" width="108" height="108" fill="#0A0B0C" stroke="#3D434A" stroke-width="0.5"/>
+    <rect x="0" y="0" width="108" height="108" fill="url(#canvasBg)"/>
+    <rect x="0" y="0" width="108" height="108" fill="url(#amberGlow)"/>
+    <path d="M52.9,30 L41,30 A11,11 0 0 0 30,41 L30,67 A11,11 0 0 0 41,78 L52.9,78 Z"
+          fill="url(#coolPane)"/>
+    <path d="M55.1,30 L67,30 A11,11 0 0 1 78,41 L78,67 A11,11 0 0 1 67,78 L55.1,78 Z"
+          fill="url(#warmPane)"/>
+    <path d="M54,35.5 L54,72.5" stroke="#F7F2E8" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <circle cx="54" cy="54" r="5.2" fill="#F7F2E8"/>
+    <!-- 启动器只显示这一块（内层 72dp） -->
+    <rect x="18" y="18" width="72" height="72" fill="none" stroke="#4CC2FF" stroke-width="0.6"/>
+    <!-- 圆形遮罩最狠时不会啃到的界（66dp 直径安全圆） -->
+    <circle cx="54" cy="54" r="33" fill="none" stroke="#FF5A5A" stroke-width="0.6" stroke-dasharray="3 3"/>
+  </g>
+</svg>

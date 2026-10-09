@@ -1,0 +1,152 @@
+{
+ "side": 256,
+ "content_png": "stats_content.png",
+ "outputs": {
+  "lab_s100": "stats_out_lab_s100.png",
+  "lab_s050": "stats_out_lab_s050.png",
+  "ot_s100": "stats_out_ot_s100.png",
+  "ot_s050": "stats_out_ot_s050.png"
+ },
+ "protect_outputs": {
+  "lab_c1": "stats_prot_lab_c1.png",
+  "lab_c05": "stats_prot_lab_c05.png",
+  "ot_c1": "stats_prot_ot_c1.png",
+  "ot_c05": "stats_prot_ot_c05.png"
+ },
+ "region_outputs": {
+  "lab_s100_p100": "stats_out_region_lab_s100_p100.png",
+  "lab_s100_p050": "stats_out_region_lab_s100_p050.png",
+  "lab_s050_p100": "stats_out_region_lab_s050_p100.png",
+  "ot_s100_p100": "stats_out_region_ot_s100_p100.png",
+  "ot_s100_p050": "stats_out_region_ot_s100_p050.png",
+  "ot_s050_p100": "stats_out_region_ot_s050_p100.png"
+ },
+ "region_meta": {
+  "lab": {
+   "kind": "region",
+   "luma": "global",
+   "ratios": {
+    "skin": 0.16463,
+    "hair": 0.21659,
+    "cloth": 0.35657,
+    "bg": 0.26221
+   },
+   "regions": {
+    "skin": "lab_stats",
+    "hair": "lab_stats",
+    "cloth": "lab_stats",
+    "bg": "lab_stats"
+   }
+  },
+  "ot": {
+   "kind": "region",
+   "luma": "global",
+   "ratios": {
+    "skin": 0.16463,
+    "hair": 0.21659,
+    "cloth": 0.35657,
+    "bg": 0.26221
+   },
+   "regions": {
+    "skin": "ot_linear",
+    "hair": "ot_linear",
+    "cloth": "ot_linear",
+    "bg": "ot_linear"
+   }
+  },
+  "noskin_lab": {
+   "kind": "region",
+   "luma": "global",
+   "ratios": {
+    "skin": 0.0,
+    "hair": 0.0,
+    "cloth": 0.0,
+    "bg": 1.0
+   },
+   "regions": {
+    "skin": null,
+    "hair": null,
+    "cloth": null,
+    "bg": "lab_stats"
+   }
+  },
+  "noskin_ot": {
+   "kind": "region",
+   "luma": "global",
+   "ratios": {
+    "skin": 0.0,
+    "hair": 0.0,
+    "cloth": 0.0,
+    "bg": 1.0
+   },
+   "regions": {
+    "skin": null,
+    "hair": null,
+    "cloth": null,
+    "bg": "ot_linear"
+   }
+  }
+ },
+ "region_sample": "examples/ref/photos_open/oc14.jpg",
+ "region_noskin_sample": "examples/sample_portrait_warm.jpg",
+ "region_noskin_outputs": {
+  "lab_p100": "stats_out_region_noskin_lab_p100.png",
+  "lab_p050": "stats_out_region_noskin_lab_p050.png",
+  "lab_p000": "stats_out_region_noskin_lab_p000.png",
+  "ot_p100": "stats_out_region_noskin_ot_p100.png",
+  "ot_p050": "stats_out_region_noskin_ot_p050.png",
+  "ot_p000": "stats_out_region_noskin_ot_p000.png"
+ },
+ "ot_mu_src": [
+  0.6107049801216746,
+  0.6476887527092288,
+  0.6750034798570255
+ ],
+ "ot_cov_src": [
+  [
+   0.07504292287315702,
+   0.07457082172638448,
+   0.07552803909112754
+  ],
+  [
+   0.07457082172638448,
+   0.07574046262897112,
+   0.07749305496559472
+  ],
+  [
+   0.07552803909112754,
+   0.07749305496559472,
+   0.07975218690419278
+  ]
+ ],
+ "ot_T": [
+  [
+   0.9847798033233293,
+   0.020122180640466347,
+   -0.23045063005961816
+  ],
+  [
+   0.020122180640460317,
+   0.776056266511082,
+   -0.245308481079788
+  ],
+  [
+   -0.23045063005961794,
+   -0.24530848107977613,
+   0.8658332855348583
+  ]
+ ],
+ "ot_mu_ref": [
+  0.312571,
+  0.282516,
+  0.274514
+ ],
+ "meta": {
+  "sample": "examples/sample_portrait_warm.jpg",
+  "content": "eval/photos/t13.jpg",
+  "env": {
+   "cv2": "5.0.0",
+   "numpy": "2.5.3"
+  }
+ }
+}

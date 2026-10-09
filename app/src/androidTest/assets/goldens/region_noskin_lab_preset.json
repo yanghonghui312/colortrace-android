@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "kind": "region",
+  "strength": 1.0,
+  "params": {
+    "global": {
+      "version": 1,
+      "kind": "lab_stats",
+      "strength": 1.0,
+      "params": {
+        "ref_mean": [
+          30.751602,
+          2.994638,
+          2.110192
+        ],
+        "ref_std": [
+          16.737883,
+          4.83124,
+          9.271621
+        ]
+      }
+    },
+    "regions": {
+      "skin": null,
+      "hair": null,
+      "cloth": null,
+      "bg": {
+        "version": 1,
+        "kind": "lab_stats",
+        "strength": 1.0,
+        "params": {
+          "ref_mean": [
+            30.751602,
+            2.994638,
+            2.110192
+          ],
+          "ref_std": [
+            16.737883,
+            4.83124,
+            9.271621
+          ]
+        }
+      }
+    },
+    "ratios": {
+      "skin": 0.0,
+      "hair": 0.0,
+      "cloth": 0.0,
+      "bg": 1.0
+    },
+    "luma": "global",
+    "protect": 1.0
+  }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  批量导出通知的小图标（纯白剪影）。
+  通知 smallIcon 系统只取 **alpha 并按主题染色** ⇒ 不能复用彩色启动图标（会糊成
+  灰块），必须用单色资产。形态与启动图标的单色层（ic_launcher_monochrome，
+  "两块面板 + 中缝"）同源，按 24dp 视窗重排：画幅 20dp + 四周 2dp 边距，
+  中缝 1.33dp 居中（与单色层同比例 6.7%）。圆角 4.58 = 11 × 20/48。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <path
+        android:pathData="M11.33,2 L6.58,2 A4.58,4.58 0 0 0 2,6.58 L2,17.42 A4.58,4.58 0 0 0 6.58,22 L11.33,22 Z"
+        android:fillColor="#FFFFFFFF" />
+    <path
+        android:pathData="M12.67,2 L17.42,2 A4.58,4.58 0 0 1 22,6.58 L22,17.42 A4.58,4.58 0 0 1 17.42,22 L12.67,22 Z"
+        android:fillColor="#FFFFFFFF" />
+</vector>
